@@ -1,0 +1,9 @@
+name: Test
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: XUnit
+        id: xunit-viewer
+        uses: AutoModality/action-xunit-viewer@v1  
