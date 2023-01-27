@@ -22,10 +22,14 @@ namespace TestProject1
         }
         [Theory]
         [InlineData(0,0,-1,0)]
+        [InlineData(0, -1, -1, 0)]
+        [InlineData(10, -1, -1, 0)]
         public void Validator_Impossible(double a, double b, double c, int d)
         {
             List<string> valids = new List<string>() { Convert.ToString(a), Convert.ToString(b), Convert.ToString(c), Convert.ToString(d) };
             Validator validator = new Validator();
+            Assert.False(validator.valueError(valids));
+            Assert.False(validator.valueError(valids));
             Assert.False(validator.valueError(valids));
         }
     }
